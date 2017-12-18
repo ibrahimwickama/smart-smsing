@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Clone Sms/compose</title>
+		
+		
+		<---<link rel="stylesheet" href="../SmsClone/css/stylecomp.css">--->
+                 <link rel="stylesheet" href="../SmsClone/css/compose.css">
+		 
+				 
+    <script language=javascript>
+        function composeClick() {
+            var to = "" + document.forms[0].t1.value;
+            var message = "" + document.forms[0].t3.value;
+            
+            if (to == "" || sub == "" || mes == "")
+                alert("Please Enter All Fields");
+            else if (document.form[0].chk1.is(":checked"))
+                alert("Please Enter Valid ID. ex senthil@global.com");
+				var chekbx = "" + document.forms[0].chk1.value;
+            else {
+
+			var chekbx = "" + document.forms[0].chk1.value;
+                document.forms[0].submit();
+            }
+
+        }
+
+function OnButton1() {
+    document.Form1.action = "addsms.php"
+    document.Form1.submit();             // Submit the page
+}
+
+function OnButton2() {
+if (document.getElementById("optionphone").checked == true) {
+    document.Form1.action = "gcm.php"
+    document.Form1.submit();             // Submit the page
+}
+}
+    </script>
+</head>
+
+<body>
+
+<form name="form1" action="addsms.php"  method="post">
+
+ <aside id="sidebar" class="nano">
+  <div class="nano-content">
+	
+    <div class="logo-container"><a href="../SmsClone/inbox.php"><b>Clone</B>Sms</a></div><a href="../SmsClone/compose.html" class="compose-button">Compose</a>
+    <menu class="menu-segment">
+      <ul>
+        <li><a href="inbox.php">Sent Sms</a></li>
+       
+  
+      </ul>
+    </menu>
+    <div class="separator"></div>
+	
+    <a href="index.html" class="logout-button">Log out</a>
+   
+   
+    <div class="bottom-padding"></div>
+  </div>
+</aside>
+   
+     
+<div class="container">
+  <div class="info">
+    <h1>Send Message</h1>
+  </div>
+</div>
+<div class="form">
+  <form class="login-form">
+    <input type="text" name="phone" placeholder="phone"/>
+	
+	<div calss="message">
+            <textarea rows = 15 name ="message" cols = 65 style="resize: none" placeholder = 'Messages send to all device in database via GCM'></textarea>
+			<div>
+		 <input type="radio" style="width:2%;"  name="smstype" value="Web"> via Web
+		<input type="radio" style="width:4%;"  name="smstype" value="phone"> via Phone
+		</div>
+	
+        </div>
+		
+	<input type=submit value="submit" style="background-color: #4284e8; width: 30%; color: white" name=b>
+  </form>
+</div>
+
+    <script src="js/index.js"></script>
+
+		
+			
+    
+
+
+</form>
+</body>
+
+</html>
